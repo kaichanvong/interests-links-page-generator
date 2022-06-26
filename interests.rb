@@ -11,7 +11,5 @@ interests_by_alphabet.map do |key, k_interests|
 	list_of_interests += (k_interests.map { |interest| interest = interest.split("(")[0];interest = "[#{interest}](https://twitter.com/search?q=#{interest.gsub(' ','%20')} 'external')"; HyperTextFromMarkdownParser.new(interest, 'li').results }).join
 end
 puts list_of_interests
-html_a_z = a_to_z.map { |alpha_item| HyperTextFromMarkdownParser.new("[#{alpha_item}](##{alpha_item})", 'li').results }.join
-file_of_interests << HyperTextFromMarkdownParser.new(html_a_z, 'ol').results
 file_of_interests << HyperTextFromMarkdownParser.new( list_of_interests, 'ol' ).results
 file_of_interests.close
