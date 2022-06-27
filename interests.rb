@@ -11,7 +11,7 @@ HTML_ORDERED_LIST = 'ol'
 HTML_LIST_ITEM = 'li'
 
 def wrap_in_html5_BoilerPlate(html)
-	"<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title></title></head> <body>"+ html + "</body></html>"
+	"<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title></title></head> <body> #{html} </body></html>"
 end
 
 interests_by_alphabet.map do |key, k_interests|
