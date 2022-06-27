@@ -1,6 +1,6 @@
 require "/hypertext_from_markdown/hypertext_from_markdown"
 SEARCH_URL = "https://twitter.com/search"
-html_header2 = "H2"
+html_header2 = "h2"
 file_of_interests = open('./index.html', 'a')
 a_to_z = ('A'..'Z').to_a
 interests_by_alphabet = interests_by_a_to_z = Hash.new([]); a_to_z.map { |alpha| interests_by_a_to_z[alpha] = [] }
