@@ -1,7 +1,7 @@
 require "/hypertext_from_markdown/hypertext_from_markdown"
 SEARCH_URL = "https://twitter.com/search"
 html_header2 = "h2"
-file_of_interests = open('./index.html', 'a')
+file_of_interests = open('./index.html', 'w')
 a_to_z = ('A'..'Z').to_a
 interests_by_alphabet = interests_by_a_to_z = Hash.new([]); a_to_z.map { |alpha| interests_by_a_to_z[alpha] = [] }
 all_interests = [] ## => ["penguins", "cats"]
@@ -10,8 +10,8 @@ list_of_interests = String.new
 HTML_ORDERED_LIST = 'ol'
 HTML_LIST_ITEM = 'li'
 
-def wrap_in_html_BoilerPlate(html)
-	"<html><head></head><body>"+ html + "</body></html>"
+def wrap_in_html5_BoilerPlate(html)
+	"<!DOCTYPE html> <html> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title></title></head> <body>"+ html + "</body></html>"
 end
 
 interests_by_alphabet.map do |key, k_interests|
@@ -21,7 +21,7 @@ interests_by_alphabet.map do |key, k_interests|
 	list_of_interests += k_interests_html
 end
 
-html_text = wrap_in_html_BoilerPlate(HyperTextFromMarkdownParser.new(list_of_interests, HTML_ORDERED_LIST).results)
+html_text = wrap_in_html5_BoilerPlate(HyperTextFromMarkdownParser.new(list_of_interests, HTML_ORDERED_LIST).results)
 
 file_of_interests << html_text
 file_of_interests.close
