@@ -20,6 +20,8 @@ interests_by_alphabet.map do |key, k_interests|
 	k_interests_html = k_interests.map { |interest| url_link = "#{SEARCH_URL}?q=#{interest.gsub(' ','%20')}"; interest_link_md = "[#{interest}](#{url_link} 'external')"; HyperTextFromMarkdownParser.new(interest_link_md, HTML_LIST_ITEM).results }.join
 	list_of_interests += k_interests_html
 end
+
 html_text = wrap_in_html_BoilerPlate(HyperTextFromMarkdownParser.new(list_of_interests, HTML_ORDERED_LIST).results)
+
 file_of_interests << html_text
 file_of_interests.close
