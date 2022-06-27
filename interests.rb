@@ -1,4 +1,4 @@
-require "../../frontend_development/apps/hypertext_from_my_markdown/hypertext_from_my_markdown"
+require "/hypertext_from_my_markdown/hypertext_from_my_markdown"
 SEARCH_URL = "https://twitter.com/search"
 html_header_2 = "H2"
 file_of_interests = open('./index.html', 'a')
