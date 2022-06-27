@@ -4,7 +4,7 @@ html_header_2 = "H2"
 file_of_interests = open('./index.html', 'a')
 a_to_z = ('A'..'Z').to_a
 interests_by_alphabet = interests_by_a_to_z = Hash.new([]); a_to_z.map { |alpha| interests_by_a_to_z[alpha] = [] }
-all_interests = [] ## => ["animals", "ant-eaters", "cats", "creatures", "dogs"]
+all_interests = [] ## => ["penguins", "cats"]
 interests = all_interests.map { |interest_keyword|  interests_by_alphabet[interest_keyword[0].capitalize] << interest_keyword }
 list_of_interests = String.new
 HTML_ORDERED_LIST = 'ol'
