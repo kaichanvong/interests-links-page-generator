@@ -10,7 +10,8 @@ list_of_interests = String.new
 HTML_ORDERED_LIST = 'ol'
 HTML_LIST_ITEM = 'li'
 interests_by_alphabet.map do |key, k_interests|
-	list_of_interests += HyperTextFromMarkdownParser.new(key.to_s, {'html_element' => html_header2, 'attr_id' => key.to_s}).results
+	h2_attrs = {'html_element' => html_header2, 'attr_id' => key.to_s}
+	list_of_interests += HyperTextFromMarkdownParser.new(key.to_s, h2_attrs).results
 	k_interests_html = k_interests.map { |interest| url_link = "#{SEARCH_URL}?q=#{interest.gsub(' ','%20')}"; interest_link_md = "[#{interest}](#{url_link} 'external')"; HyperTextFromMarkdownParser.new(interest_link_md, HTML_LIST_ITEM).results }.join
 	list_of_interests += k_interests_html
 end
